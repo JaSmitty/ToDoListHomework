@@ -17,3 +17,22 @@ C:\Users\Student\Private Side Projects\ToDo List Project\ToDo List Project\obj\D
 C:\Users\Student\Private Side Projects\ToDo List Project\ToDo List Project\obj\Debug\netcoreapp3.1\ToDo List Project.RazorTargetAssemblyInfo.cache
 C:\Users\Student\Private Side Projects\ToDo List Project\ToDo List Project\obj\Debug\netcoreapp3.1\ToDo List Project.dll
 C:\Users\Student\Private Side Projects\ToDo List Project\ToDo List Project\obj\Debug\netcoreapp3.1\ToDo List Project.pdb
+C:\Users\Student\Private Side Projects\ToDoListHomework\ToDo List Project\ToDo List Project\bin\Debug\netcoreapp3.1\appsettings.Development.json
+C:\Users\Student\Private Side Projects\ToDoListHomework\ToDo List Project\ToDo List Project\bin\Debug\netcoreapp3.1\appsettings.json
+C:\Users\Student\Private Side Projects\ToDoListHomework\ToDo List Project\ToDo List Project\bin\Debug\netcoreapp3.1\Properties\launchSettings.json
+C:\Users\Student\Private Side Projects\ToDoListHomework\ToDo List Project\ToDo List Project\bin\Debug\netcoreapp3.1\ToDo List Project.exe
+C:\Users\Student\Private Side Projects\ToDoListHomework\ToDo List Project\ToDo List Project\bin\Debug\netcoreapp3.1\ToDo List Project.deps.json
+C:\Users\Student\Private Side Projects\ToDoListHomework\ToDo List Project\ToDo List Project\bin\Debug\netcoreapp3.1\ToDo List Project.runtimeconfig.json
+C:\Users\Student\Private Side Projects\ToDoListHomework\ToDo List Project\ToDo List Project\bin\Debug\netcoreapp3.1\ToDo List Project.runtimeconfig.dev.json
+C:\Users\Student\Private Side Projects\ToDoListHomework\ToDo List Project\ToDo List Project\bin\Debug\netcoreapp3.1\ToDo List Project.dll
+C:\Users\Student\Private Side Projects\ToDoListHomework\ToDo List Project\ToDo List Project\bin\Debug\netcoreapp3.1\ToDo List Project.pdb
+C:\Users\Student\Private Side Projects\ToDoListHomework\ToDo List Project\ToDo List Project\obj\Debug\netcoreapp3.1\ToDo List Project.csprojAssemblyReference.cache
+C:\Users\Student\Private Side Projects\ToDoListHomework\ToDo List Project\ToDo List Project\obj\Debug\netcoreapp3.1\staticwebassets\ToDo List Project.StaticWebAssets.Manifest.cache
+C:\Users\Student\Private Side Projects\ToDoListHomework\ToDo List Project\ToDo List Project\obj\Debug\netcoreapp3.1\staticwebassets\ToDo List Project.StaticWebAssets.xml
+C:\Users\Student\Private Side Projects\ToDoListHomework\ToDo List Project\ToDo List Project\obj\Debug\netcoreapp3.1\ToDo List Project.csproj.CoreCompileInputs.cache
+C:\Users\Student\Private Side Projects\ToDoListHomework\ToDo List Project\ToDo List Project\obj\Debug\netcoreapp3.1\ToDo List Project.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\Student\Private Side Projects\ToDoListHomework\ToDo List Project\ToDo List Project\obj\Debug\netcoreapp3.1\ToDo List Project.AssemblyInfoInputs.cache
+C:\Users\Student\Private Side Projects\ToDoListHomework\ToDo List Project\ToDo List Project\obj\Debug\netcoreapp3.1\ToDo List Project.AssemblyInfo.cs
+C:\Users\Student\Private Side Projects\ToDoListHomework\ToDo List Project\ToDo List Project\obj\Debug\netcoreapp3.1\ToDo List Project.RazorTargetAssemblyInfo.cache
+C:\Users\Student\Private Side Projects\ToDoListHomework\ToDo List Project\ToDo List Project\obj\Debug\netcoreapp3.1\ToDo List Project.dll
+C:\Users\Student\Private Side Projects\ToDoListHomework\ToDo List Project\ToDo List Project\obj\Debug\netcoreapp3.1\ToDo List Project.pdb

@@ -7,27 +7,22 @@ namespace ToDo_List_Project.Models
 {
     public class ToDoList
     {
+        public ToDoList()
+        {
+        }
+
         public ToDoList(int id, string name, long unixTime, List<SingleTask> list)
         {
             this.Id = id;
             this.Name = name;
-            this.UnixTime = unixTime;
+            this.TimeTicks = unixTime;
             this.Tasks = list;
         }
         public int Id { get; set; }
 
         public string Name { get; set; }
 
-        public DateTime Time
-        {
-            get
-            {
-                return UnixTimeStampToDateTime(this.UnixTime).AddHours((double)-4);
-
-            }
-        }
-
-        public long UnixTime { get; set; }
+        public long TimeTicks { get; set; }
 
         public List<SingleTask> Tasks { get; set; }
 

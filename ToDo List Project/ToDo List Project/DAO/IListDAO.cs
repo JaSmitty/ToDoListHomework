@@ -8,11 +8,11 @@ namespace ToDo_List_Project.DAO
 {
     interface IListDAO
     {
-        ToDoList GetAllList();
+        List<ToDoList> GetAllList();
 
         ToDoList GetListById(int id);
 
-        ToDoList CreateList(List<SingleTask> list, string name);
+        ToDoList CreateList(ToDoList newList);
 
         ToDoList UpdateList(ToDoList list);
 

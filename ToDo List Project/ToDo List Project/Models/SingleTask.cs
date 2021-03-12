@@ -9,7 +9,10 @@ namespace ToDo_List_Project.Models
     {
         public string TaskDescription { get; set; }
         public bool IsCompleted { get; set; }
+        public SingleTask()
+        {
 
+        }
         public SingleTask(string taskDescription, bool isCompleted)
         {
             this.TaskDescription = taskDescription;

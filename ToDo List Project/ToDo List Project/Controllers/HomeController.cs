@@ -25,11 +25,18 @@ namespace ToDo_List_Project.Controllers
         }
 
         [HttpPost]
-        [Route("create/{listName}")]
-        public ActionResult<bool> TestFileWrite(List<SingleTask> newList, string listName)
+        [Route("create")]
+        public ActionResult<bool> TestFileWrite(ToDoList tasks)
         {
-            ListDAO.CreateList(newList, listName);
+            ListDAO.CreateList(tasks);
             return true;
+        }
+
+        [HttpGet]
+        [Route("list/{id}")]
+        public ActionResult<ToDoList> GetListById(int id)
+        {
+            return this.ListDAO.GetListById(id);
         }
     }
 }
