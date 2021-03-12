@@ -20,6 +20,17 @@ namespace ToDo_List_Project.DAO
             }
             
         }
+        private string FullPathToFile2
+        {
+            get
+            {
+                string directory = Environment.CurrentDirectory;
+                string filename = "Lists2.txt";
+                string fullPath = Path.Combine(directory, filename);
+                return fullPath;
+            }
+
+        }
         public ToDoList CreateList(ToDoList newList)
         {
             int count = 1;
@@ -42,7 +53,36 @@ namespace ToDo_List_Project.DAO
 
         public bool DeleteList(int id)
         {
-            throw new NotImplementedException();
+            DuplicateFile();
+            bool hasDeleted = false;
+            using(StreamReader sr = new StreamReader(this.FullPathToFile2))
+            {
+                using(StreamWriter sw = new StreamWriter(this.FullPath, false))
+                {
+                    while (!sr.EndOfStream)
+                    {
+                        string currentLine = sr.ReadLine();
+                        if (currentLine.Length > 1 )
+                        {
+                            ToDoList currentList = StringToList(currentLine);
+                            if (currentList.Id == id)
+                            {
+                                sw.WriteLine("D");
+                                hasDeleted = true;
+                            }
+                            else
+                            {
+                                sw.WriteLine(currentLine);
+                            }
+                        }
+                        else if(currentLine.Contains("D"))
+                        {
+                            sw.WriteLine("D");
+                        }
+                    }
+                }
+            }
+            return hasDeleted;
         }
 
         public bool FileExists()
@@ -52,9 +92,20 @@ namespace ToDo_List_Project.DAO
 
         public List<ToDoList> GetAllList()
         {
-            throw new NotImplementedException();
+            List<ToDoList> returnedList = new List<ToDoList>();
+            using (StreamReader sr = new StreamReader(FullPath))
+            {
+                while (!sr.EndOfStream)
+                {
+                    string currentLine = sr.ReadLine();
+                    if (currentLine.Length > 1)
+                    {
+                        returnedList.Add(StringToList(currentLine));
+                    }
+                }
+            }
+            return returnedList;
         }
-
         public ToDoList GetListById(int id)
         {
             using (StreamReader sr = new StreamReader(FullPath))
@@ -77,6 +128,10 @@ namespace ToDo_List_Project.DAO
             throw new NotImplementedException();
         }
 
+
+
+
+        //Helper methods
         private string ListToString(ToDoList list)
         {
             string taskString = "";
@@ -90,22 +145,37 @@ namespace ToDo_List_Project.DAO
         private ToDoList StringToList(string listString)
         {
             ToDoList newList = new ToDoList();
+
+            newList.Tasks = new List<SingleTask>();
             string[] splitString = listString.Split('|');
             newList.Id = Int32.Parse(splitString[0]);
             newList.Name = splitString[1];
             newList.TimeTicks = long.Parse(splitString[2]);
             string[] taskArray = splitString[3].Split(',');
-            foreach(string singleString in taskArray)
+            foreach (string singleString in taskArray)
             {
-                if (singleString.Length > 0)
+                if (singleString.Length > 1)
                 {
                     string[] tasks = singleString.Split('=');
                     SingleTask newTask = new SingleTask(tasks[0], bool.Parse(tasks[1]));
-                    newList.Tasks = new List<SingleTask>();
                     newList.Tasks.Add(newTask);
                 }
             }
             return newList;
+        }
+
+        private void DuplicateFile()
+        {
+            using (StreamReader sr = new StreamReader(FullPath))
+            {
+                using (StreamWriter sw = new StreamWriter(this.FullPathToFile2, false))
+                {
+                    while (!sr.EndOfStream)
+                    {
+                        sw.WriteLine(sr.ReadLine());
+                    }
+                }
+            }
         }
     }
 }

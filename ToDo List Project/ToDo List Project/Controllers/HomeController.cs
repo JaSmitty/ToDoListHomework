@@ -26,17 +26,32 @@ namespace ToDo_List_Project.Controllers
 
         [HttpPost]
         [Route("create")]
-        public ActionResult<bool> TestFileWrite(ToDoList tasks)
+        public ActionResult<ToDoList> TestFileWrite(ToDoList tasks)
         {
-            ListDAO.CreateList(tasks);
-            return true;
+            return ListDAO.CreateList(tasks);
+            
         }
 
         [HttpGet]
+        [Route("list")]
+        public ActionResult<List<ToDoList>> GetAllList()
+        {
+            return this.ListDAO.GetAllList();
+        }
+
+
+            [HttpGet]
         [Route("list/{id}")]
         public ActionResult<ToDoList> GetListById(int id)
         {
             return this.ListDAO.GetListById(id);
+        }
+
+        [HttpDelete]
+        [Route("delete/{id}")]
+        public ActionResult<bool> DeleteList(int id)
+        {
+            return this.ListDAO.DeleteList(id);
         }
     }
 }
