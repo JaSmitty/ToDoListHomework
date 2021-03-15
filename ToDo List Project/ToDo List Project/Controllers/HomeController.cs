@@ -26,7 +26,7 @@ namespace ToDo_List_Project.Controllers
 
         [HttpPost]
         [Route("create")]
-        public ActionResult<ToDoList> TestFileWrite(ToDoList tasks)
+        public ActionResult<ToDoList> CreateList(ToDoList tasks)
         {
             return ListDAO.CreateList(tasks);
             
@@ -52,6 +52,13 @@ namespace ToDo_List_Project.Controllers
         public ActionResult<bool> DeleteList(int id)
         {
             return this.ListDAO.DeleteList(id);
+        }
+
+        [HttpPut]
+        [Route("update")]
+        public ActionResult<bool> UpdateList(ToDoList list)
+        {
+            return this.ListDAO.UpdateList(list);
         }
     }
 }

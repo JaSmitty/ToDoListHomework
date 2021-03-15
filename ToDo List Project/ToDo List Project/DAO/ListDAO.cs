@@ -123,9 +123,38 @@ namespace ToDo_List_Project.DAO
             }
         }
 
-        public ToDoList UpdateList(ToDoList list)
+        public bool UpdateList(ToDoList list)
         {
-            throw new NotImplementedException();
+            DuplicateFile();
+            bool hasUpdated = false;
+            using (StreamReader sr = new StreamReader(this.FullPathToFile2))
+            {
+                using (StreamWriter sw = new StreamWriter(this.FullPath, false))
+                {
+                    while (!sr.EndOfStream)
+                    {
+                        string currentLine = sr.ReadLine();
+                        if (currentLine.Length > 1)
+                        {
+                            ToDoList currentList = StringToList(currentLine);
+                            if (currentList.Id == list.Id)
+                            {
+                                sw.WriteLine(ListToString(list));
+                                hasUpdated = true;
+                            }
+                            else
+                            {
+                                sw.WriteLine(currentLine);
+                            }
+                        }
+                        else if (currentLine.Contains("D"))
+                        {
+                            sw.WriteLine("D");
+                        }
+                    }
+                }
+            }
+            return hasUpdated;
         }
 
 

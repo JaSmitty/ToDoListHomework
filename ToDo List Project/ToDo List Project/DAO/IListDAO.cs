@@ -14,7 +14,7 @@ namespace ToDo_List_Project.DAO
 
         ToDoList CreateList(ToDoList newList);
 
-        ToDoList UpdateList(ToDoList list);
+        bool UpdateList(ToDoList list);
 
         bool DeleteList(int id);
 
